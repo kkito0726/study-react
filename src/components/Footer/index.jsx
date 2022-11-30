@@ -1,4 +1,6 @@
 import classes from "src/components/Footer/Footer.module.css";
+import logo from "public/vercel.svg";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -10,7 +12,12 @@ export function Footer() {
       >
         Powered by{" "}
         <span className={classes.logo}>
-          <img src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          <Image
+            src={"/public/vercel.svg"}
+            alt="Vercel Logo"
+            width={72}
+            height={16}
+          />
         </span>
       </a>
     </footer>

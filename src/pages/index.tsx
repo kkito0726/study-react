@@ -19,9 +19,7 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
       <Header />
-      <a href="/about" onClick={handleClick}>
-        ボタン
-      </a>
+      <a onClick={handleClick}>ボタン</a>
       <Main page="index" />
       <Footer />
     </div>
