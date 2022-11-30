@@ -3,7 +3,6 @@ import { Links } from "src/components/Links";
 import { Headline } from "src/components/Headline";
 
 export function Main(props) {
-  console.log(props);
   return (
     <main className={classes.main}>
       <Headline page={props.page} onClick={() => alert("クリックしました。")}>
