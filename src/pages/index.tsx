@@ -9,6 +9,7 @@ export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([]);
 
   const handleClick = useCallback(() => {
     if (count < 10) {
@@ -33,11 +34,24 @@ export default function Home() {
 
   const handleChange = useCallback((e) => {
     const inputValue = e.target.value;
-    if (inputValue.length > 5) {
-      return;
-    }
     setText(inputValue.trim());
   }, []);
+
+  const handleAdd = useCallback(() => {
+    setArray((prevArray) => {
+      if (prevArray.some((item) => item === text)) {
+        alert("すでに同じ値が存在します！！");
+        return prevArray;
+      }
+      if (text === "") {
+        alert("入力されていません！！！");
+        return prevArray;
+      }
+      const newArray = [...prevArray, text];
+      setText("");
+      return newArray;
+    });
+  }, [text]);
 
   return (
     <div className={styles.container}>
@@ -49,6 +63,12 @@ export default function Home() {
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
       <input type="text" value={text} onChange={handleChange} />
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
       <Main page="index" />
       <Footer />
     </div>
