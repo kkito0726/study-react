@@ -3,55 +3,14 @@ import styles from "../styles/Home.module.css";
 import { Footer } from "../components/Footer";
 import { Main } from "../components/Main";
 import { Header } from "../components/Header";
-import { useCallback, useEffect, useState } from "react";
+import { useCounter } from "src/hooks/useCounter";
+import { useInputArray } from "src/hooks/useInputArray";
+import { useBgLightblue } from "src/hooks/useBgLightblue";
 
 export default function Home() {
-  const [count, setCount] = useState(1);
-  const [text, setText] = useState("");
-  const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([]);
-
-  const handleClick = useCallback(() => {
-    if (count < 10) {
-      setCount((prevCount) => prevCount + 1);
-    }
-  }, [count]);
-
-  const handleDisplay = useCallback(
-    () => setIsShow((prevIsShow) => !prevIsShow),
-    []
-  );
-
-  useEffect(() => {
-    console.log("マウント時");
-    document.body.style.backgroundColor = "lightblue";
-
-    return () => {
-      console.log("アンマウント時");
-      document.body.style.backgroundColor = "";
-    };
-  }, []);
-
-  const handleChange = useCallback((e) => {
-    const inputValue = e.target.value;
-    setText(inputValue.trim());
-  }, []);
-
-  const handleAdd = useCallback(() => {
-    setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
-        alert("すでに同じ値が存在します！！");
-        return prevArray;
-      }
-      if (text === "") {
-        alert("入力されていません！！！");
-        return prevArray;
-      }
-      const newArray = [...prevArray, text];
-      setText("");
-      return newArray;
-    });
-  }, [text]);
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { text, array, handleChange, handleAdd } = useInputArray();
+  useBgLightblue();
 
   return (
     <div className={styles.container}>
