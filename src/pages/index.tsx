@@ -24,8 +24,8 @@ export default function Home() {
       <input type="text" value={text} onChange={handleChange} />
       <button onClick={handleAdd}>追加</button>
       <ul>
-        {array.map((item) => {
-          return <li key={item}>{item}</li>;
+        {array.map((item, index) => {
+          return <li key={index}>{item}</li>;
         })}
       </ul>
       <Main page="index" />
