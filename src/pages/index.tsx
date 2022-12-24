@@ -7,7 +7,9 @@ import { useCounter } from "src/hooks/useCounter";
 import { useInputArray } from "src/hooks/useInputArray";
 import { useBgLightblue } from "src/hooks/useBgLightblue";
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props);
+
   const { count, isShow, handleClick, handleDisplay } = useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
   useBgLightblue();

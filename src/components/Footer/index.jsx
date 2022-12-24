@@ -12,7 +12,7 @@ export function Footer() {
       >
         Powered by{" "}
         <span className={classes.logo}>
-          <Image src={Logo} alt="Vercel Logo" width={72} height={16} />
+          {/* <Image src={Logo} alt="Vercel Logo" width={72} height={16} /> */}
         </span>
       </a>
     </footer>
