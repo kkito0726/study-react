@@ -3,12 +3,12 @@ import { AppProps } from "next/app";
 import { Head } from "next/document";
 import { useCounter } from "../hooks/useCounter";
 import { useInputArray } from "../hooks/useInputArray";
-import { useBgLightblue } from "../hooks/useBgLightblue";
+import { useBgColor } from "../hooks/useBgColor";
 
 export default function App({ Component, pageProps }: AppProps) {
   const counter = useCounter();
   const inputArray = useInputArray();
-  useBgLightblue();
+  useBgColor();
   return (
     <>
       <Head>

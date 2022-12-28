@@ -6,14 +6,14 @@ import { Main } from "../components/Main";
 import { Header } from "../components/Header";
 import { useCounter } from "src/hooks/useCounter";
 import { useInputArray } from "src/hooks/useInputArray";
-import { useBgLightblue } from "src/hooks/useBgLightblue";
+import { useBgColor } from "src/hooks/useBgColor";
 
 export default function About(props) {
   console.log(props);
   const { count, doubleCount, isShow, handleClick, handleDisplay } =
     useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
-  useBgLightblue();
+  useBgColor();
 
   return (
     <div className={styles.container}>
