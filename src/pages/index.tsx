@@ -10,7 +10,8 @@ import { useBgLightblue } from "src/hooks/useBgLightblue";
 export default function Home(props) {
   console.log(props);
 
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { count, doubleCount, isShow, handleClick, handleDisplay } =
+    useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
   useBgLightblue();
 
@@ -20,7 +21,7 @@ export default function Home(props) {
         <title>Create Next App</title>
       </Head>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
+      {isShow ? <h1>{doubleCount}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
       <input type="text" value={text} onChange={handleChange} />

@@ -10,7 +10,8 @@ import { useBgLightblue } from "src/hooks/useBgLightblue";
 
 export default function About(props) {
   console.log(props);
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { count, doubleCount, isShow, handleClick, handleDisplay } =
+    useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
   useBgLightblue();
 
