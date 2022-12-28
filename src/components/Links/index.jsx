@@ -1,6 +1,6 @@
 import classes from "src/components/Links/Links.module.css";
 
-export function Links(props) {
+export const Links = (props) => {
   const { items, handleReduce } = props;
   console.log(items);
   return (
@@ -19,4 +19,4 @@ export function Links(props) {
       </div>
     </div>
   );
-}
+};

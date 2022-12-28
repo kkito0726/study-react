@@ -8,7 +8,7 @@ import { useCounter } from "src/hooks/useCounter";
 import { useInputArray } from "src/hooks/useInputArray";
 import { useBgColor } from "src/hooks/useBgColor";
 
-export default function About(props) {
+const About = (props) => {
   console.log(props);
   const { count, doubleCount, isShow, handleClick, handleDisplay } =
     useCounter();
@@ -37,4 +37,6 @@ export default function About(props) {
       <Footer />
     </div>
   );
-}
+};
+
+export default About;

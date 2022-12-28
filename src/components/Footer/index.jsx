@@ -2,7 +2,7 @@ import classes from "src/components/Footer/Footer.module.css";
 import { Logo } from "public/vercel.svg";
 import Image from "next/image";
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className={classes.footer}>
       <a
@@ -17,4 +17,4 @@ export function Footer() {
       </a>
     </footer>
   );
-}
+};

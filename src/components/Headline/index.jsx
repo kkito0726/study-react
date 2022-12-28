@@ -1,6 +1,6 @@
 import classes from "src/components/Headline/Headline.module.css";
 
-export function Headline(props) {
+export const Headline = (props) => {
   return (
     <div className={classes.container}>
       <h1 className={classes.title}>
@@ -13,4 +13,4 @@ export function Headline(props) {
       <button onClick={props.onClick}>クリックボタン</button>
     </div>
   );
-}
+};
